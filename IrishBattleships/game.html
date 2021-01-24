@@ -1,0 +1,206 @@
+<html ng-app="battleshipsApp">
+
+<head>
+  <title>Irish Battleships - An Irish verb conjugation learning game.</title>
+  <meta name="description" content="A version of the classic Battleships game to help understand Irish verb conjugations.">
+  <meta name="author" content="Emma Daly">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="irish,verbs,battleships,game">
+  <meta charset="utf-8">
+  <script src="app/lib/angular/angular.js"></script>
+  <script src="app/lib/jquery.min.js"></script>
+  <script src="app/lib/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="app/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app/js/ngDialog/ngDialog.css" />
+  <link rel="stylesheet" href="app/js/ngDialog/ngDialog-theme-default.min.css" />
+  <link rel="stylesheet" href="app/css/main.css" />
+  <link rel="stylesheet" href="app/css/displayMode.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+</head>
+
+
+<body ng-controller="BattleshipsController" ng-cloak >
+
+  <div style="background-image: url('https://cdn.pixabay.com/photo/2015/06/08/15/28/underwater-802092_960_720.jpg');"></div>
+  <div class="display-mode" dn-display-mode="displayMode" dn-reset-board="resetBoard"></div>
+  
+  <div class="container">
+   <div class="row headerRow">
+      <div class="col-xs-10 col-xs-offset-1">
+        <img ng-src="./app/images/header-main.png" class="headerImage" />
+      </div> 
+    </div> 
+    <div class="row">
+      <div class="col-xs-1"></div>
+      <div class="col-xs-11">
+        <div class="xTitles">
+          <div class="xTitle" ng-repeat="verb in boardVerbs" ng-click="showDefinition(verb.verb)" >{{verb.verb}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-1" style="padding-right: 0">
+        <div class="yTitles pull-right">
+          <div class="yTitle">mé</div>
+          <div class="yTitle">tú</div>
+          <div class="yTitle">sé</div>
+          <div class="yTitle">sí</div>
+          <div class="yTitle">sinn</div>
+          <div class="yTitle">sibh</div>
+          <div class="yTitle">siad</div>
+          <div class="yTitle">Negative + mé</div>
+          <div class="yTitle">An/Ar + tú?</div>
+          <div class="yTitle">Briathar Saor</div>
+        </div>
+      </div>
+      <div class="board col-xs-11 col-xs-offset-0">
+        <div class="boardWrapper" ng-show="showBoard">
+          <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[0]" ng-style="{ 'backgroundColor':cell.colour }"></div>
+          <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[1]" ng-style="{ 'backgroundColor':cell.colour }"></div>
+          <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[2]" ng-style="{ 'backgroundColor':cell.colour }"></div>
+          <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[3]" ng-style="{ 'backgroundColor':cell.colour }"></div>
+          <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[4]" ng-style="{ 'backgroundColor':cell.colour }"></div>
+          <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[5]" ng-style="{ 'backgroundColor':cell.colour }"></div>
+          <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[6]" ng-style="{ 'backgroundColor':cell.colour }"></div>
+          <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[7]" ng-style="{ 'backgroundColor':cell.colour }"></div>
+          <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[8]" ng-style="{ 'backgroundColor':cell.colour }"></div>
+          <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[9]" ng-style="{ 'backgroundColor':cell.colour }"></div>
+        </div>
+        <div class="boardWrapper" ng-hide="showBoard">
+          <div class="tocadoContainer" ng-class="{ 'tocado-phone' : numberOfVerbs === 6 }" ng-style="{ 'backgroundColor': tocadoColour }">
+            <div class="tocado">BUAIL!!!</div>
+          </div>
+        </div>
+        <div class="boardWrapper" ng-show="showCompleted">
+          <div class="completedContainer">
+            <div class="completedMessage">Maith thú! You completed the game and sunk all 7 ships in {{movesCount}} moves</div>
+          </div>
+        </div>
+        <div class="shipsWrapper">
+          <div class="fiveLongAShip ship" ng-class="{ 'sunk': fiveLongASunk }">
+            <img src="./app/images/5long.gif" width="150" height="30" />
+          </div>
+          <div class="fiveLongBShip ship" ng-class="{ 'sunk': fiveLongBSunk }">
+            <img src="./app/images/5long.gif" width="150" height="30" />
+          </div>
+          <div class="fourLongAShip ship" ng-class="{ 'sunk': fourLongASunk }">
+            <img src="./app/images/4longa.gif" width="120" height="30" />
+          </div>
+          <div class="fourLongBShip ship" ng-class="{ 'sunk': fourLongBSunk }">
+            <img src="./app/images/4longb.gif" width="120" height="30" />
+          </div>
+          <div class="threeLongAShip ship" ng-class="{ 'sunk': threeLongASunk }">
+            <img src="./app/images/3long.gif" width="90" height="30" />
+          </div>
+          <div class="threeLongBShip ship" ng-class="{ 'sunk': threeLongBSunk }">
+            <img src="./app/images/3long.gif" width="90" height="30" />
+          </div>
+          <div class="twoLongShip ship" ng-class="{ 'sunk': twoLongSunk }">
+            <img src="./app/images/3long.gif" width="60" height="30" />
+          </div>
+          <div>
+            Moves: {{movesCount}}
+          </div>
+          <div class="instructions1">
+            NOTE: in the present tense of "Bí" you must type both cases e.g tá sé/bíonn sé
+            <br /> 
+            <br />Don't forget to put a "?" at the end of the question verb e.g an ndúnann tú?
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="row showOnPhone">
+      <div class="col-xs-11 col-xs-offset-1">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            Change Tense
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="switchTense('present')">Aimsir Láithreach</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="switchTense('past')">Aimsir Chaite</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="switchTense('future')">Aimsir Fháistineach</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="switchTense('conditional')">Modh Coinníollach</a></li>
+          </ul>
+        </div>
+        <div class="resetButtonWrapper">
+          <button type="button" class="btn btn-primary btn-resetBoard" ng-click="resetBoard()">Reset Board</button>
+        </div>
+      </div>      
+    </div> 
+
+    <div class="row">
+      <div class="col-xs-1" style="margin-top: 0px; height: 0px;">
+        <form ng-submit="onShotAttempt()" style="position:relative; right: 1200;">
+          <input type="text" class="inputWord" ng-model="inputText" ng-keyup="keyup($event)" ng-keydown="keydown($event)" autofocus/>
+        </form>
+      </div>
+      <div class="col-xs-11" style="margin-top: 5px;">
+        <div class="instructions">
+          To make a shot type in the verb in the {{selectedTense}} tense
+        </div>
+                    
+        <div class="dropdown hideOnPhone">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            Change Tense
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="switchTense('present')">Aimsir Láithreach</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="switchTense('past')">Aimsir Chaite</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="switchTense('future')">Aimsir Fháistineach</a></li>
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="switchTense('conditional')">Modh Coinníollach</a></li>
+          </ul>
+        </div>
+        <div class="resetButtonWrapper hideOnPhone">
+          <button type="button" class="btn btn-primary btn-resetBoard" ng-click="resetBoard()">Reset Board</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-5 col-xs-offset-1">
+        <div id='validationMessage'>{{validationMessage}}</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-1" ng-hide="showFilteredInputText">
+        <div id='divText' ng-style="{ 'color':divTextColor}">{{inputText}}</div>
+      </div>
+      <div class="col-xs-3 col-xs-offset-1" ng-show="showFilteredInputText">
+        <div id='divText' ng-style="{ 'color':divTextColor }">{{filteredInputText}}</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app/js/app.js"></script>
+  <script src="app/js/services/boardService.js"></script>
+  <script src="app/js/services/dictionaryService.js"></script>
+
+  <script src="app/js/controllers/BattleshipsController.js"></script>
+  <script src="app/js/directives/displayModeDirective.js"></script>
+  <script src="app/js/ngDialog/ngDialog.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-58678493-1', 'auto');
+    ga('send', 'pageview');
+
+
+    $('dropdown').select('mobile');
+  </script>
+
+  <script type="text/ng-template" id="verbDefinitionTemplate">
+    <h1 style="margin-top: 0">{{verbName}}</h1>
+    <div style="font-size:25px; color: lightblue; margin-bottom: 20px;">{{meaning}}</div>
+    <div ng-repeat="conjugation in conjugations">{{conjugation}}</div>
+  </script>
+
+</body>
+</html>

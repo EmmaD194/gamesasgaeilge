@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+	<head>	
+		<meta charset="utf-8">
+		<title>Cuardach Focal</title>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body>
+		<h1>Cuardach Focal!</h1>
+		<h2 id = "instructions"></h2>
+		<h3 id = "themeIntro">Is é an téama: <span id = "wordTheme"></span></h3>
+		
+		<button id = "newGameButton" type = "button">Cluiche Nua</button>
+		<div id = "wordboard"></div>
+		<div id = "wordlist"></div>
+		<button id = "solveButton" type = "button">Taispeáin na freagraí!</button>
+
+		<link rel = "stylesheet" type="text/css" href = "css/wordsearch.css">
+
+		<script src = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
+
+		<script src = "js/wordpaths.js"></script>
+		<script src = "js/wordsearchcontroller.js"></script>
+		<script src = "js/wordsearchlogic.js"></script>
+		<script src = "js/wordsearchview.js"></script>
+
+		<script>	
+			$(document).ready( function() {
+				new WordSearchController("#wordboard", "#wordlist", "#solveButton", "#newGameButton", "#instructions", 
+					"#wordTheme");
+			})
+		</script>
+	</body>
+</html>

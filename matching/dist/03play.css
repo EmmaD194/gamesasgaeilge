@@ -1,0 +1,157 @@
+#playing {
+  /* border: 1px solid red; */
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+#board {
+  /* border: 1px solid red; */
+  height: 60vh;
+  width: 85vw;
+  /* max-width: 900px; */
+  min-width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+#new-game-btn{
+  border: 2px solid white;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+#new-game-btn:hover{
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#def-container, #char-container{
+  /* border: 1px solid red; */
+  width: 42vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#def-container {
+  justify-content: flex-start;
+}
+
+#char-container {
+  justify-content: flex-end;
+}
+
+.card {
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+  height: 9vw;
+  width: 11vw;
+  min-height: 80px;
+  min-width: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: whitesmoke;
+
+  transition-duration: 0.3s;
+}
+
+.card1 {
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+  height: 9vw;
+  width: 11vw;
+  min-height: 80px;
+  min-width: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: blue;
+  background-color: whitesmoke;
+
+  transition-duration: 0.3s;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px grey;
+  transition-duration: 0.3s;
+}
+
+.card1:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px grey;
+  transition-duration: 0.3s;
+}
+
+.select {
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+
+.unselect {
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+.match, .match:hover {
+  border: 2px solid green;
+  border-radius: 5px;
+  cursor: default;
+}
+
+.hide {
+  pointer-events: none;
+  border: 2px solid rgb(0, 0, 0);
+  opacity: 0.1;
+  transition-duration: 0.3s;
+}
+
+.no-match, .no-match:hover {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+
+
+.hide-modal {
+  display: block;
+  position: fixed;
+  opacity: 0;
+}
+
+.show-modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  transition-duration: 1s;
+}
+
+.modal-content {
+  border: 2px solid rgb(224, 191, 3);
+  border-radius: 5px;
+  margin: 5% auto;
+  padding: 20px;
+  width: 30vw;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  color: rgb(224, 191, 3);
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.5em;
+  font-weight: 700;
+}
