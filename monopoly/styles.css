@@ -1,5 +1,5 @@
 body {
-	background: #FFFFFF;
+	background-image: url('./images/startscreen.jpg');
 	margin: 0px;
 	min-width: 1075px;
 }
@@ -12,6 +12,7 @@ td {
 }
 
 #setup {
+	
 	display: none;
 	margin: 15px;
 }
@@ -824,4 +825,29 @@ td {
 	top: 0px;
 	width: 15px;
 
+}
+.startPlayer{
+	
+	font-size: 20px;
+	margin-bottom: 20px; 
+	text-align: center;
+}
+
+.beginButton{
+	
+	margin: 20px 0px; 
+	text-align: center;
+}
+
+.inputOverlay {
+	position:absolute;
+	background: rgba(255, 0, 0, 0.8);
+    color: #111;
+    width: 74%;
+    height: 35%;
+	z-index:20;
+	left: 13%;
+    top: 14.7%;
+    box-sizing: border-box;
+	padding:10px 30px 30px 30px;
 }
