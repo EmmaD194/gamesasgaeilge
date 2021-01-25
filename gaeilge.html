@@ -41,7 +41,9 @@ body {font-family: "Lato", sans-serif}
 
   <!-- about -->
   <div class="site-container site-content site-center site-padding-64 site-large" style="max-width:800px" id="about">
-    <h2 class="site-wide site-xxlarge">Games as Gaeilge</h2>
+    <div class="w3-center">
+      <img src="./images/logo1.png" class="w3-round w3-margin-bottom" alt="Games as Gaeilge" style="width:60%">
+    </div>
     <p class="site-opacity site-xlarge"><i>Cluichí foghlama Gaeilge</i></p>
    
       <p class="site-justify">Seo cúpla cluiche gréasáin chun cabhrú le foghlaim agus tuiscint na Gaeilge!
@@ -137,7 +139,7 @@ body {font-family: "Lato", sans-serif}
 
 
   <!-- Contact -->
-  <div class="site-container site-content site-padding-64" style="max-width:800px" id="contact">
+  <!--<div class="site-container site-content site-padding-64" style="max-width:800px" id="contact">
     <h2 class="site-wide site-center">TEAGMHÁIL</h2>
     <p class="site-opacity site-center site-xlarge"><i>Má thugann tú faoi deara aon earráidí nó má tá aon cheist nó moladh agat, déan teagmháil liom!</i></p>
     <div class="site-container site-padding-64 site-center site-xxxlarge">
@@ -146,6 +148,28 @@ body {font-family: "Lato", sans-serif}
 
       <i class="fa fa-twitter site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://twitter.com/3MM4RuTH'"></i>
       <i class="fa fa-github site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://github.com/EmmaD194'"></i>
+    </div>
+  </div>-->
+  <div class="site-container site-content site-padding-64" style="max-width:800px" id="contact">
+    <h2 class="site-wide site-center">TEAGMHÁIL</h2>
+    <p class="site-opacity site-center site-large"><i>Má thugann tú faoi deara aon earráidí nó má tá aon cheist nó moladh agat, déan teagmháil liom!</i></p>
+    <div class="site-row site-padding-32 site-center">
+      
+      <div class="site-center">
+        <form id="fcf-form-id" action="contact-form-process.php" method="post">
+          <div class="site-row-padding site-center" style="margin:0 -16px 8px -16px">
+            <div class="site-half">
+              <input class="site-input site-border" type="text" placeholder="Ainm" name="name" id="Name" required>
+            </div>
+            <div class="site-half">
+              <input class="site-input site-border" type="email" placeholder="Seoladh ríomhphoist" name="email" id="Email" required>
+            </div>
+          </div>
+          <textarea name="message" class="site-input site-border" placeholder="Teachtaireacht" row="4" required></textarea>
+          
+          <button class="site-button site-black site-section site-right" id="fcf-button" type="submit">SEOL</button>
+        </form>
+      </div>
     </div>
   </div>
   
@@ -156,9 +180,13 @@ body {font-family: "Lato", sans-serif}
 
 
 <!-- Footer -->
-<footer class="site-container site-padding-64 site-center site-opacity site-light-grey site-xlarge">
-  
-  
+<footer class="site-container site-padding-64 site-center site-opacity site-pale-green site-xlarge">
+  <div class="site-container site-padding-64 site-center site-xxlarge ">
+  <i class="fa fa-envelope site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='mailto:dalye16@tcd.ie'"></i>
+  <i class="fa fa-facebook-official site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://www.facebook.com/profile.php?id=100007145504202'"></i>
+  <i class="fa fa-twitter site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://twitter.com/3MM4RuTH'"></i>
+  <i class="fa fa-github site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://github.com/EmmaD194'"></i>
+  </div>
 </footer>
 
 <script>

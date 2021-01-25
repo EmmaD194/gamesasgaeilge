@@ -6,7 +6,7 @@ body {
 
 td {
 	font-size: 12px;
-	font-family: arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	border: 1px solid black;
 	text-align: center;
 }
@@ -95,7 +95,7 @@ td {
 #quickstats {
 	font-size: 12px;
 	font-weight: bold;
-	font-family: arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	border: 2px solid blue;
 	margin: 5px;
 	padding: 3px;
@@ -244,7 +244,7 @@ td {
 #menutable {
 	padding: 0px;
 	text-align: left;
-	font-family: arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	color: white;
 	font-weight: bold;
 	font-size: 16px;
@@ -290,7 +290,7 @@ td {
 #popup {
 	width: 300px;
 	min-width: 300px;
-	font-family: Arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	padding: 10px;
 	text-align: center;
@@ -366,7 +366,7 @@ td {
 #stats {
 	max-width: 914px;
 	min-width: 454px;
-	font-family: Arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	padding: 10px;
 	text-align: center;
@@ -458,7 +458,7 @@ td {
 	background-color: yellow;
 	text-align: center;
 	text-transform: uppercase;
-	font-family: Calibri, Arial;
+	font-family: Calibri, 'Roboto';
 }
 
 #deed-name {
@@ -474,7 +474,7 @@ td {
 }
 
 #deed-mortgaged {
-	font-family: Calibri, Arial;
+	font-family: Calibri, 'Roboto';
 	font-size: 16px;
 	text-align: center;
 
@@ -488,7 +488,7 @@ td {
 }
 
 #deed-special {
-	font-family: Calibri, Arial;
+	font-family: Calibri, 'Roboto';
 	text-align: justify;
 }
 
@@ -623,7 +623,7 @@ td {
 	border: 2px solid black;
 	text-align: center;
 	font-size: 12px;
-	font-family: arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	position: fixed;
 	z-index: 15;
 }
@@ -827,7 +827,7 @@ td {
 
 }
 .startPlayer{
-	
+	font-family:'Roboto', sans-serif;
 	font-size: 20px;
 	margin-bottom: 20px; 
 	text-align: center;
