@@ -4,7 +4,7 @@ if (isset($_POST['email'])) {
     $name = $_POST['name']; 
     $email = $_POST['email']; 
     $message = $_POST['message']; 
-    $checkbox = $_POST['gdpr'];
+    
 
     $email_to = "emma@gamesasgaeilge.com";
     $headers = "From: ".$email;

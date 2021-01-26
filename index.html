@@ -29,8 +29,12 @@ body {font-family: 'Varela Round', sans-serif;}
   <div class="site-bar site-green site-card">
     <a class="site-bar-item site-button site-padding-large site-hide-medium site-hide-large site-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <!--<a href="#" class="site-bar-item site-button site-padding-large">HOME</a>-->
-    <a href="#about" class="site-bar-item site-button site-padding-large site-hide-small">ABOUT</a>
+    <a href="#home" class="site-bar-item site-button  site-hide-small">
+      <img alt="banner logo" src="./images/banner1.png" >
+      </a>
+    
     <a href="#games" class="site-bar-item site-button site-padding-large site-hide-small">GAMES</a>
+    <a href="about.html" class="site-bar-item site-button site-padding-large site-hide-small">ABOUT</a>
     <a href="#contact" class="site-bar-item site-button site-padding-large site-hide-small">CONTACT</a>
     <a href="gaeilge.html" class="site-bar-item site-button site-padding-large site-hide-small site-right">GAEILGE</a>
     <!--<a href="javascript:void(0)" class="site-padding-large site-hover-red site-hide-small site-right"><i class="fa fa-search"></i></a>-->
@@ -39,8 +43,9 @@ body {font-family: 'Varela Round', sans-serif;}
 
 <!-- Navbar on small screens  -->
 <div id="navDemo" class="site-bar-block site-green site-hide site-hide-large site-hide-medium site-top" style="margin-top:46px">
-  <a href="#about" class="site-bar-item site-button site-padding-large" onclick="myFunction()">ABOUT</a>
+  <a href="#home" class="site-bar-item site-button site-padding-large" onclick="myFunction()">HOME</a>
   <a href="#games" class="site-bar-item site-button site-padding-large" onclick="myFunction()">GAMES</a>
+  <a href="about.html" class="site-bar-item site-button site-padding-large" >ABOUT</a>
   <a href="#contact" class="site-bar-item site-button site-padding-large" onclick="myFunction()">CONTACT</a>
   <a href="gaeilge.html" class="site-bar-item site-button site-padding-large" >GAEILGE</a>
 </div>
@@ -50,8 +55,8 @@ body {font-family: 'Varela Round', sans-serif;}
 
 
 
-  <!-- ABOut -->
-  <div class="site-container site-content site-center site-padding-64 site-large" style="max-width:800px" id="about">
+  <!-- home -->
+  <div class="site-container site-content site-center site-padding-64 site-large" style="max-width:800px" id="home">
     <div class="site-center">
       <img src="./images/logo1.png" class="site-round site-margin-bottom" alt="Games as Gaeilge" style="width:60%">
     </div>
@@ -59,21 +64,16 @@ body {font-family: 'Varela Round', sans-serif;}
     <p class="site-opacity site-xlarge"><i>Irish language learning games</i></p>
     
     <p class="site-justify"> These are a few web games to help in the learning and understanding of the Irish Language! 
-      These games were all developed and coded by Emma Daly, Computer Science, Irish and Linguistics Student at 
-      Trinity College Dublin. <br>  <br>  I made these games after deciding to take up Irish in college recently. I hadn't used the 
-      language in nearly two and a half years and my notes from school were long gone, but I noticed
-      there wasn't many resources or games online concerning the Irish language. So, I decided to make some games "as gaeilge". Developing 
-      these games 
-      became a good way to "refresh" the language for me and I enjoyed making them! <br> <br> The games work best on a PC/laptop but most of them run 
-      on mobile (it just might not look as good - but I'm working on it!). I'll also be adding more games in the future! <br> <br>
-      I hope you have fun playing these games and if you notice any errors or have any suggestions, please get in touch!</p>
+    </br></br>There are some games about Irish verbs and grammar and a few translations of popular board games. More games will be added in the future!</br></br>
+      The games work best on a PC/laptop but most of them run on mobile (they just might not look as good!).
+      </p>
     
   </div>
 
   
   <div class="site-pale-green" id="games">
     <div class="site-container site-content site-padding-64" style="max-width:800px">
-      <h2 class="site-wide site-center site-xxlarge">GAMES</h2>
+      <h2 class="site-wide site-center site-xxlarge" style="font-family: 'Varela Round', sans-serif">GAMES</h2>
       
 
       <div class="site-row-padding site-padding-32" style="margin:0 -16px">
@@ -168,8 +168,8 @@ body {font-family: 'Varela Round', sans-serif;}
   </div>-->
 
   <div class="site-container site-content site-padding-64" style="max-width:800px" id="contact">
-    <h2 class="site-wide site-center">CONTACT</h2>
-    <p class="site-opacity site-center site-large"><i>If you notice any errors, or have any queries or suggestions, please get in touch with me!</i></p>
+    <h2 class="site-wide site-center" style="font-family: 'Varela Round', sans-serif">CONTACT</h2>
+    <p class="site-opacity site-center site-large"><i>If you notice any errors, or have any queries or suggestions, please get in touch!</i></p>
     <div class="site-row site-padding-32 site-center">
       
       <div class="site-center">
@@ -185,7 +185,7 @@ body {font-family: 'Varela Round', sans-serif;}
           <textarea name="message" class="site-input site-border" placeholder="Message" row="4" required></textarea>
           
           <button class="site-button site-black site-section site-right" id="fcf-button" type="submit">SEND</button>
-          <input class ="site-opacity site-center site-small" type="checkbox" name="gdpr" value="gdpr" />&nbsp; I understand the information I provide will be processed in compliance with GDPR &nbsp;&nbsp;</span>
+          <!--<input class ="site-opacity site-center site-small" type="checkbox" name="gdpr" value="gdpr" />&nbsp; I understand the information I provide will be processed in compliance with GDPR &nbsp;&nbsp;</span>-->
         </form>
         
        
@@ -201,12 +201,9 @@ body {font-family: 'Varela Round', sans-serif;}
 
 
 <!-- Footer -->
-<footer class="site-container site-padding-32 site-center site-opacity site-pale-green site-xlarge">
-  <div class="site-container site-padding-32 site-center site-xxlarge ">
-  <i class="fa fa-envelope site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='mailto:dalye16@tcd.ie'"></i>
-  <i class="fa fa-facebook-official site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://www.facebook.com/profile.php?id=100007145504202'"></i>
-  <i class="fa fa-twitter site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://twitter.com/3MM4RuTH'"></i>
-  <i class="fa fa-github site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://github.com/EmmaD194'"></i>
+<footer class="site-container site-padding-16 site-center site-opacity site-pale-green site-xlarge">
+  <div class="site-container site-padding-16 site-center site-xxlarge ">
+    <i class="fa fa-github site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://github.com/EmmaD194/gamesasgaeilge'"></i>
   </div>
   <div class="site-center site-tiny">
     <a href='privacypolicy.html'> Privacy Policy</a>

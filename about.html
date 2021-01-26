@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Games as Gaeilge</title>
+  <meta name="description" content="A website with Irish language games to help improve your Irish"/>
+  <meta property="og:title" content="Games as Gaeilge" />
+  <meta property="og:url" content="https://gamesasgaeilge.com/" />
+  <meta property="og:description" content="A website with Irish language games to help improve your Irish" />
+  <meta property="og:image" content="https://gamesasgaeilge.com/images/meta.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+<style>
+body {font-family: 'Varela Round', sans-serif;}
+.mySlides {display: none}
+</style>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="site-top">
+  <div class="site-bar site-green site-card">
+    <a class="site-bar-item site-button site-padding-large site-hide-medium site-hide-large site-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <!--<a href="#" class="site-bar-item site-button site-padding-large">HOME</a>-->
+    <a href="index.html#home" class="site-bar-item site-button  site-hide-small">
+        <img alt="banner logo" src="./images/banner1.png" >
+        </a>
+    <a href="index.html#games" class="site-bar-item site-button site-padding-large site-hide-small">GAMES</a>
+    <a href="about.html" class="site-bar-item site-button site-padding-large site-hide-small">ABOUT</a>
+    <a href="index.html#contact" class="site-bar-item site-button site-padding-large site-hide-small">CONTACT</a>
+    <a href="aboutGaeilge.html" class="site-bar-item site-button site-padding-large site-hide-small site-right">GAEILGE</a>
+    <!--<a href="javascript:void(0)" class="site-padding-large site-hover-red site-hide-small site-right"><i class="fa fa-search"></i></a>-->
+  </div>
+</div>
+
+<!-- Navbar on small screens  -->
+<div id="navDemo" class="site-bar-block site-green site-hide site-hide-large site-hide-medium site-top" style="margin-top:46px">
+  <a href="index.html#home" class="site-bar-item site-button site-padding-large" onclick="myFunction()">HOME</a>
+  <a href="index.html#games" class="site-bar-item site-button site-padding-large" onclick="myFunction()">GAMES</a>
+  <a href="about.html" class="site-bar-item site-button site-padding-large" >ABOUT</a>
+  <a href="index.html#contact" class="site-bar-item site-button site-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="aboutGaeilge.html" class="site-bar-item site-button site-padding-large" >GAEILGE</a>
+</div>
+
+<!-- Page content -->
+<div class="site-content" style="max-width:2000px;margin-top:46px">
+
+  <div class="site-container site-content site-center site-padding-64 site-large" style="max-width:800px" id="home">
+    
+    <h2 class="site-wide site-xxlarge" style="font-family: 'Varela Round', sans-serif">ABOUT</h2>
+    
+    <p class="site-justify"> These games were all developed and coded by Emma Daly, Computer Science, Irish and Linguistics Student at 
+        Trinity College Dublin. <br>  <br>  I made these games after deciding to take up Irish in college recently. I hadn't used the 
+        language in nearly two and a half years and my notes from school were long gone, but I noticed
+        there wasn't many resources or games online concerning the Irish language. So, I decided to make some games "as gaeilge". Developing 
+        these games 
+        became a good way to "refresh" the language for me and I enjoyed making them! <br> <br> 
+        I hope you have fun playing these games and if you notice any errors or have any suggestions, please get in touch!</p>
+
+        <div class="site-container site-padding-16 site-center site-xxxlarge ">
+            <i class="fa fa-envelope site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='mailto:dalye16@tcd.ie'"></i>
+            <i class="fa fa-facebook-official site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://www.facebook.com/profile.php?id=100007145504202'"></i>
+            <i class="fa fa-twitter site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://twitter.com/3MM4RuTH'"></i>
+            <i class="fa fa-github site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://github.com/EmmaD194'"></i>
+            </div>
+    
+  </div>
+
+  
+
+
+
+</div>
+
+<footer class="site-container site-padding-16 site-center site-opacity site-pale-green site-xlarge">
+    <div class="site-container site-padding-16 site-center site-xxlarge ">
+      <i class="fa fa-github site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://github.com/EmmaD194/gamesasgaeilge'"></i>
+    </div>
+    <div class="site-center site-tiny">
+      <a href='privacypolicy.html'> Privacy Policy</a>
+    </div>
+</footer>
+
+
+<script>
+
+
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("site-show") == -1) {
+    x.className += " site-show";
+  } else { 
+    x.className = x.className.replace(" site-show", "");
+  }
+}
+
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
