@@ -213,7 +213,8 @@
           $scope.showBoard = false;
           $interval(function () {
             if($scope.tocadoColour === 'red') {
-              $scope.tocadoColour = 'black';
+             //$scope.tocadoColour = 'black';
+              $scope.tocadoColour = 'red';
             } else {
               $scope.tocadoColour = 'red';
             }
