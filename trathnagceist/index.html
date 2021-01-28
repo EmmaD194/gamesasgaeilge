@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" >
+    <title>Tráth na gceist</title>
+    <!-- style sheets -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- custom fonts -->
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="startPage">
+        <section class="spMainSection">
+            <div id="spContent">
+                <!--<h1 id="title"> ?<span class="yellow">?</span>?<span class="yellow">?</span>?</h1>-->
+                <p id="instructions">
+                    This is a small quiz with 7 questions to test your knowledge of the Irish language. Keep an eye out for a count down timer that will look like this "<span id="timer"></span>" somewhere on the page. Answer the question before the timer reaches zero!
+                </p>
+            </div>
+            <nav>
+                <div style="cursor: pointer;"id="startQuiz">Imir</div>
+            </nav>
+        </section>
+        <footer>
+            
+        </footer>
+    </div>
+    <div id="gamePage" class="invisible">
+        <header>
+            <!--<h1 id="title"> ?<span class="yellow">?</span>?<span class="yellow">?</span>?</h1>-->
+        </header>
+        <div id="gpTimer"></div>
+        <section class="mainSection">
+            <!-- populated by jQuery -->
+        </section>
+        <footer>
+            
+        </footer>
+    </div>
+    <div id="correctPage" class="invisible">
+        <header>
+            <!--<h1 id="title"> ?<span class="yellow">?</span>?<span class="yellow">?</span>?</h1>-->
+        </header>
+        <section class="cpMainSection">
+            <div id="cpContent">
+                <div id="cpHeader">
+                    Maith thú!
+                </div>
+                <p id="cpText">
+                    You answered the question correct! The quiz will continue after the timer below reaches <span class="yellow">zero</span>.
+                </p>
+            </div>
+            <div id="cpTimer"></div>
+        </section>
+        <footer>
+            
+        </footer>
+    </div>
+    <div id="incorrectPage" class="invisible">
+        <header>
+            <!--<h1 id="title"> ?<span class="yellow">?</span>?<span class="yellow">?</span>?</h1>-->
+        </header>
+        <section class="ipMainSection">
+            <div id="ipContent">
+                <div id="ipHeader">
+                    Mícheart!
+                </div>
+                <p id="ipText">
+                    You answered the question incorrectly. Don't worry! The quiz will continue after the timer below reaches <span class="yellow">zero</span>.
+                </p>
+            </div>
+            <div id="ipTimer"></div>
+        </section>
+        <footer>
+           
+        </footer>
+    </div>
+    </div>
+    <div id="timesUpPage" class="invisible">
+        <header>
+            <!--<h1 id="title"> ?<span class="yellow">?</span>?<span class="yellow">?</span>?</h1>-->
+        </header>
+        <section class="tpMainSection">
+            <div id="tpContent">
+                <div id="tpHeader">
+                    Time's up!
+                </div>
+                <p id="tpText">
+                    You weren't paying attention and time ran out. The quiz will continue when the timer reaches <span class="yellow">zero</span>.
+                </p>
+            </div>
+            <div id="tpTimer"></div>
+        </section>
+        <footer>
+            
+        </footer>
+    </div>
+    <div id="overPage" class="invisible">
+        <header>
+            <!--<h1 id="title"> ?<span class="yellow">?</span>?<span class="yellow">?</span>?</h1>-->
+        </header>
+        <section class="opMainSection">
+            <div id="opContent">
+                <div id="opHeader">
+                    Comhghairdeas!
+                </div>
+                <p id="opText">
+                    You've gone through all of the questions! You got <span class="yellow" id="score"></span> out of <span class="yellow" id="totalQuestions"></span> correct. Press "Imir arís" to play again!
+                </p>
+            </div>
+            <nav>
+                <div style="cursor: pointer;" id="replayQuiz">Imir arís</div>
+            </nav>
+        </section>
+        <footer>
+            
+        </footer>
+    </div>
+    <!-- jQuery and JavaScript links -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script type="text/javascript" src="assets/javascript/questions.js"></script>
+</body>
+
+</html>
+<!--<div id="questionTimer" class="element timer"></div>
+        <div class="questionSection element">
+    <p class="questionText">Question Text</p>
+</div>
+<div class="answerSection element">
+    <div id="answer1" class="answer element" data-transition = "flip" data-role="page"> answer1</div>
+    <div id="answer2" class="answer element" data-role="page">answer2</div>
+    <div id="answer3" class="answer element">answer3</div>
+    <div id="answer4" class="answer element">answer4</div>
+</div> -->
+<!--<div id="startUp">
+    <h1 id="title" class="element"> Tr<span class="yellow">i</span>v<span class="yellow">i</span>a Game</h1>
+</div> -->
