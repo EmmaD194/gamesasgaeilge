@@ -1,0 +1,139 @@
+battleshipsApp.factory('boardService', function () {
+  var layout,
+    ships;
+
+  function getLayout (numberOfpronouns) {
+    
+    var r, c, layout, newCell;
+    layout = { rows: [] };
+    for(r = 0; r < 7; r++) {
+      row = [];
+      for(c = 0; c < numberOfpronouns; c++) {
+        row.push({ row: r, column: c, colour: '#edc9af', hasShip: false });
+      }
+      layout.rows.push(row);
+    }
+
+    return layout;
+  }
+
+  function getRandomInt(min, max) {
+    
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  function getRandomOrientation() {
+    var binary = getRandomInt(0, 2);
+    if (binary === 0) {
+      return 'horizontal';
+    }
+    return 'vertical';
+  }
+
+  function getShips() {
+    var allCells = [],
+      cellCount,
+      randomCell,
+      ships = [],
+      shipCoords,
+      ship;
+    angular.forEach(layout.rows, function (row) {
+      angular.forEach(row, function (cell) {
+        allCells.push(cell);
+      });
+    });
+
+    var shipLengths = [2, 3, 3, 4, 4, 5, 5];
+    var shipIds = ["twoLong", "threeLongA", "threeLongB", "fourLongA", "fourLongB", "fiveLongA", "fiveLongB"];
+
+    angular.forEach(shipLengths, function(shipLength, index) {
+      shipPlaced = false;
+      while(!shipPlaced) {
+        shipCoords = placeShip(shipLength, allCells);
+        if(shipCoords !== null) {
+          ship = {
+            coords: shipCoords,
+            sunk: false,
+            shipId: shipIds[index]
+          };
+          ships.push(ship);
+          shipPlaced = true;
+        }
+      }
+    });
+
+    return ships; 
+  }
+
+  function placeShip (shipLength, allCells) {
+    
+    var cellCount = allCells.length,
+      randomCellIndex = getRandomInt(0, cellCount),
+      randomCell = allCells[randomCellIndex],
+      orientation,
+      shipCoords,
+      row,
+      col,
+      i,
+      cell;
+
+    if (randomCell.hasShip)  {
+      return null;
+    }
+
+    orientation = getRandomOrientation();
+    shipCoords = [];
+    row = randomCell.row;
+    col = randomCell.column;
+
+    if (orientation === 'horizontal') {
+      if(col - shipLength < -1) {
+        return null;
+      } else {        
+        for (i = col - shipLength + 1; i < col; i++) {
+          cell = layout.rows[row][i];
+          if(cell.hasShip) {
+            return null;
+          }
+        }
+        for (i = col - shipLength + 1; i < col + 1; i++) {
+          layout.rows[row][i].hasShip = true;
+          shipCoords.push({ x: i, y: row });
+        }
+        return shipCoords;
+      }
+    } else {
+      if (row - shipLength < -1) {
+        return null;
+      } else {
+        for (i = row - shipLength + 1; i < row; i++) {
+          cell = layout.rows[i][col];
+          if(cell.hasShip) {
+            return null;
+          }
+        }
+        for (i = row - shipLength + 1; i < row + 1; i++) {
+          layout.rows[i][col].hasShip = true;
+          shipCoords.push({ x: col, y: i });
+        }
+        return shipCoords;
+      }
+    }
+
+    return null;
+  }
+
+
+  return {
+    layout: function (numberOfpronouns) {
+      layout = getLayout(numberOfpronouns);
+      const ALERT = "To dig in a spot begin typing \n Mobile: Hold down the vowel and select the vowel with a fada \n Desktop: Hold down 'Alt Gr' and press the vowel to type a fada";
+    alert(ALERT);
+      return layout;
+    },
+    ships: function () {
+      ships = getShips();
+      return ships;
+    }
+  };
+});
