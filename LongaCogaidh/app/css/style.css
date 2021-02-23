@@ -84,23 +84,23 @@ td.shipGreen {
   transform: rotate(315deg);
 }
 
-.tocadoContainer {
+.buailContainer {
   width: 600px;
   height: 400px;
 }
 
-.tocado {
+.buail {
   font-size: 80px;
   text-align: center;
   padding-top:96px;
 }
 
-.tocado-phone {
+.buail-phone {
   width: 240px;
   height: 240px;
 }
 
-.tocado-phone .tocado {
+.buail-phone .buail {
   font-size: 50px;
   padding-top: 115px;
 }

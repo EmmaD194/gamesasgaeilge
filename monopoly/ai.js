@@ -1,4 +1,4 @@
-// The purpose of this AI is not to be a relistic opponant, but to give an example of a vaild AI player.
+// The purpose of this AI is not to be a realistic opponant, but to give an example of a vaild AI player.
 function AITest(p) {
 	this.alertList = "";
 

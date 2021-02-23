@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="app/js/ngDialog/ngDialog-theme-default.min.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="app/css/main.css" />
+  <link rel="stylesheet" href="app/css/style.css" />
   <link rel="stylesheet" href="app/css/displayMode.css" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 </head>
@@ -70,8 +70,8 @@
           <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[9]" ng-style="{ 'backgroundColor':cell.colour }"></div>
         </div>
         <div class="boardWrapper" ng-hide="showBoard">
-          <div class="tocadoContainer" ng-class="{ 'tocado-phone' : numberOfVerbs === 6 }" ng-style="{ 'backgroundColor': tocadoColour }">
-            <div class="tocado">BUAIL!!!</div>
+          <div class="buailContainer" ng-class="{ 'buail-phone' : numberOfVerbs === 6 }" ng-style="{ 'backgroundColor': buailColour }">
+            <div class="buail">BUAIL!!!</div>
           </div>
         </div>
         <div class="boardWrapper" ng-show="showCompleted">

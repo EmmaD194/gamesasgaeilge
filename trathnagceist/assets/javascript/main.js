@@ -47,7 +47,7 @@ var quiz = {
                 $("<p>", { "class": "questionText", text: vQuestion, "qIndex": vIndex })
             )
         );
-        quiz.chooseAnswerOptions(); //go to function to create object of all possible correct and incorrect options
+        quiz.chooseAnswerOptions(); 
 
         quiz.completion();
     },
@@ -58,12 +58,12 @@ var quiz = {
         let vCorrectAnswers = [];
         let vIncorrectAnswers = [];
 
-        //find correct answers array and push to vCorrectAnswers
+       
         $.each(quiz.answerArray, function(index, value) {
-            // console.log(value);
+           
             if (vCorrectAnswers.length !== 1) {
                 if (quiz.answerArray[index].atype === vQType) {
-                    //vCorrectAnswers.push(value)
+                    
                     vCorrectAnswers = $.extend(true, {}, value);
                     return false;
                 };
@@ -97,8 +97,7 @@ var quiz = {
         let vIncorrectAnsdone = 0;
         let vChoiceArray = $.extend(true, {}, quiz.choicesArray);
 
-        // console.log("Copy of choice array", vChoiceArray);
-        // console.log(typeof(vChoiceArray));
+        
 
         quiz.totalQuestionsAsked++;
         console.log("Total Questions asked", quiz.totalQuestionsAsked);
@@ -116,8 +115,7 @@ var quiz = {
             let vIncorrectRand = quiz.random(0, Object.keys(vChoiceArray).length - 3);
             let vIncorrectTextRand = quiz.random(0, vChoiceArray[vIncorrectRand].atextarray.length - 1);
 
-            // console.log("this is the incorrect rand", vIncorrectRand);
-            // console.log("this is the incorrect text rand", vIncorrectTextRand);
+            
 
             if (vRandTF == true && vCorrectAnsdone === 0) {
                 $(".answerSection").append(
@@ -135,11 +133,11 @@ var quiz = {
             };
         }
 
-        quiz.timer.reset("#gpTimer"); //so the timer will not start with a zero and jump up to the beginning of the countdown.
+        quiz.timer.reset("#gpTimer"); 
 
         quiz.timer.startTimer(15, "#gpTimer", quiz.timesUpAnswer); //start timer for 15 seconds and once it runs out run the times up function.
 
-        quiz.checkUserInput(); //turn on event listener after the answers are displayed to check user input
+        quiz.checkUserInput(); 
     },
 
 
@@ -268,16 +266,3 @@ var quiz = {
 }
 
 quiz.reset();
-
-
-// var testarray = [0, 1];
-
-// // Testing randomization of array.
-// var objResults = {} 
-//  for(var i = 0; i < 1000000; i++){ 
-//      var randomElement = testarray[quiz.random(0, testarray.length-1)] 
-//      if (objResults[randomElement]){ 
-//          objResults[randomElement]++ 
-//      }
-//      else{ 
-//          objResults[randomElement] = 1 } } console.log(objResults)

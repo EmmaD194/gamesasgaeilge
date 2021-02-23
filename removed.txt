@@ -1,0 +1,7 @@
+github logo from footer
+<div class="site-container site-padding-16 site-center site-xxlarge ">
+      <i class="fa fa-github site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://github.com/EmmaD194/gamesasgaeilge'"></i>
+    </div>
+
+facebook from about/eolas
+<i class="fa fa-facebook-official site-hover-opacity" style="cursor: pointer;" onClick="window.location.href='https://www.facebook.com/profile.php?id=100007145504202'"></i>

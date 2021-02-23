@@ -41,7 +41,7 @@
       $scope.showFilteredInputText = false;
       $scope.divText = '';
       $scope.divTextColor = 'red';
-      $scope.tocadoColour = 'black';
+      $scope.buailColour = 'black';
 
       $scope.showDefinition = function (verbName) {
         var verbData = dictionaryService.getVerbData(verbName, $scope.selectedTense);
@@ -192,7 +192,7 @@
                     case "twoLong": $scope.twoLongSunk = true;
                       break;
                   }
-                  tocadoInterval(50, 20);
+                  buailInterval(50, 20);
                   if ($scope.fiveLongASunk && $scope.fiveLongBSunk && $scope.fourLongBSunk && $scope.fourLongASunk && $scope.threeLongASunk && $scope.threeLongBSunk && $scope.twoLongSunk) {
                     $scope.showCompleted = true;
                     $scope.showBoard = false;
@@ -209,14 +209,14 @@
 
         window.scrollTo(0, 0);
 
-        function tocadoInterval(delay, count) {
+        function buailInterval(delay, count) {
           $scope.showBoard = false;
           $interval(function () {
-            if($scope.tocadoColour === 'red') {
-             //$scope.tocadoColour = 'black';
-              $scope.tocadoColour = 'red';
+            if($scope.buailColour === 'red') {
+             //$scope.buailColour = 'black';
+              $scope.buailColour = 'red';
             } else {
-              $scope.tocadoColour = 'red';
+              $scope.buailColour = 'red';
             }
           }, delay, count).then(function () {$scope.showBoard = true;});
         }

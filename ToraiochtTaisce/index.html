@@ -65,8 +65,8 @@
           <div ng-class="{ true : 'firstCell' }[$first]" class="defaultCell" ng-repeat="cell in boardLayout.rows[9]" ng-style="{ 'backgroundColor':cell.colour }"></div>
         </div>
         <div class="boardWrapper" ng-hide="showBoard">
-          <div class="tocadoContainer" ng-class="{ 'tocado-phone' : numberOfpronouns === 6 }" ng-style="{ 'backgroundColor': tocadoColour }">
-            <div class="tocado">FAIGH!!!</div>
+          <div class="faighContainer" ng-class="{ 'faigh-phone' : numberOfpronouns === 6 }" ng-style="{ 'backgroundColor': faighColour }">
+            <div class="faigh">FAIGH!!!</div>
           </div>
         </div>
         <div class="boardWrapper" ng-show="showCompleted">

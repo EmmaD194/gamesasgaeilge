@@ -41,7 +41,7 @@
       $scope.showFilteredInputText = false;
       $scope.divText = '';
       $scope.divTextColor = 'red';
-      $scope.tocadoColour = 'black';
+      $scope.faighColour = 'black';
 
       $scope.showDefinition = function (pronounName) {
         var pronounData = dictionaryService.getpronounData(pronounName, $scope.selectedTense);
@@ -192,7 +192,7 @@
                     case "twoLong": $scope.twoLongSunk = true;
                       break;
                   }
-                  tocadoInterval(50, 20);
+                  faighInterval(50, 20);
                   if ($scope.fiveLongASunk && $scope.fiveLongBSunk && $scope.fourLongBSunk && $scope.fourLongASunk && $scope.threeLongASunk && $scope.threeLongBSunk && $scope.twoLongSunk) {
                     $scope.showCompleted = true;
                     $scope.showBoard = false;
@@ -209,13 +209,13 @@
 
         window.scrollTo(0, 0);
 
-        function tocadoInterval(delay, count) {
+        function faighInterval(delay, count) {
           $scope.showBoard = false;
           $interval(function () {
-            if($scope.tocadoColour === 'red') {
-              $scope.tocadoColour = 'red';
+            if($scope.faighColour === 'red') {
+              $scope.faighColour = 'red';
             } else {
-              $scope.tocadoColour = 'red';
+              $scope.faighColour = 'red';
             }
           }, delay, count).then(function () {$scope.showBoard = true;});
         }
