@@ -35,7 +35,7 @@ function Card(text, action) {
 }
 
 function corrections() {
-	//document.getElementById("cell1name").textContent = "Mediter-ranean Avenue";
+
 	document.getElementById("cell26name").textContent = "Ionad Siopa-doireachta Northside";
 	document.getElementById("cell27name").textContent = "Ionad Siopa-doireachta Omni";
 	document.getElementById("cell29name").textContent = "Ionad Siopa-doireachta Pavilions";
