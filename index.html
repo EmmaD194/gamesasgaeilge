@@ -18,12 +18,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<script src='https://www.google.com/recaptcha/api.js' async defer></script>
+
 
 <style>
 body {font-family: 'Varela Round', sans-serif;}
 .mySlides {display: none}
 </style>
 <head>
+  <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101306173);</script>
+  <script async src="//static.getclicky.com/js"></script>
   <script data-ad-client="ca-pub-3622938766718958" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
 </head>
@@ -214,7 +218,7 @@ body {font-family: 'Varela Round', sans-serif;}
     <div class="site-row site-padding-32 site-center">
       
       <div class="site-center">
-        <form id="fcf-form-id" action="contact-form-process.php" method="post">
+        <form id="fcf-form-id" action="contact-form-process.php" method="POST">
           <div class="site-row-padding site-center" style="margin:0 -16px 8px -16px">
             <div class="site-half">
               <input class="site-input site-border" type="text" placeholder="Ainm" name="name" id="Name" required>
@@ -224,6 +228,7 @@ body {font-family: 'Varela Round', sans-serif;}
             </div>
           </div>
           <textarea name="message" class="site-input site-border" placeholder="Teachtaireacht" row="4" required></textarea>
+          <div class="g-recaptcha" data-sitekey="6LfWEX8aAAAAAHikYOb0dENHVnUXOSd3_UMF9rm_"></div>
           
           <button class="site-button site-black site-section site-right" id="fcf-button" type="submit">SEOL</button>
         </form>
