@@ -20,7 +20,24 @@
 body {font-family: 'Varela Round', sans-serif;}
 .mySlides {display: none}
 </style>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+<meta name="msapplication-square70x70logo" content="smalltile.png" />
+<meta name="msapplication-square150x150logo" content="mediumtile.png" />
+<meta name="msapplication-wide310x150logo" content="widetile.png" />
+<meta name="msapplication-square310x310logo" content="largetile.png" />
 </head>
 <body>
 
@@ -57,7 +74,7 @@ body {font-family: 'Varela Round', sans-serif;}
 </div>
 
 
-<div class="site-content" style="max-width:2000px;margin-top:46px">
+<div class="site-content" style="max-width:2000px;margin-top:46px; cursor:default">
 
   <div class="site-container site-content site-center site-padding-64 site-large" style="max-width:800px" id="home">
     
@@ -65,7 +82,7 @@ body {font-family: 'Varela Round', sans-serif;}
     
     <p class="site-justify">Rinne Emma Daly, 
       Mac Léinn Ríomheolaíochta, Gaeilge agus Teangeolaíochta i gColáiste na Tríonóide, Baile Átha Cliath, na cluichí seo.</br></br>
-      Chruthaigh mé na cluichí seo tar éis thosaigh mé ag déanamh staidéir Gaeilge sa choláiste. Níor úsáid mé an teanga le beagnach dhá 
+      Chruthaigh mé na cluichí seo tar éis thosaigh mé ag déanamh staidéir <span ondblclick="clickAlert()">Gaeilge</span> sa choláiste. Níor úsáid mé an teanga le beagnach dhá 
       bhliain go leith agus bhí mo chuid nótaí ón scoil imithe, ach thug mé faoi deara nach raibh go leor acmhainní nó cluichí 
       ar líne maidir leis an nGaeilge. Mar sin, shocraigh mé roinnt cluichí a dhéanamh “as gaeilge”. Ba bhealach maith é na cluichí seo 
       a chódú chun an teanga a “athnuachan” dom agus bhain mé taitneamh as iad a dhéanamh!</br></br>
@@ -102,6 +119,13 @@ body {font-family: 'Varela Round', sans-serif;}
   </div>
 </footer>
 
+<script type="text/javascript">
+  var message = "Míle buíochas le mo mhúinteoir Gaeilge Ms. Gilligan as an gcabhair agus an tacaíocht!";
+  function clickAlert()
+  {  
+    alert(message);    
+  }
+</script>   
 
 </body>
 </html>
