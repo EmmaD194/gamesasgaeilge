@@ -107,7 +107,7 @@ window.onload = function () {
             hint: "English"
           },
           {
-            word: "Gaeilge",
+            word: "gaeilge",
             hint: "Irish"
           },
           {
@@ -121,6 +121,35 @@ window.onload = function () {
           {
             word: "corpoideachas",
             hint: "P.E"
+          }
+        ]
+      },
+      {
+        category: "Bia - Food",
+        words: [
+          {
+            word: "bainne",
+            hint: "milk"
+          },
+          {
+            word: "ispíní",
+            hint: "sausages"
+          },
+          {
+            word: "milseáin",
+            hint: "sweets"
+          },
+          {
+            word: "cairéad",
+            hint: "carrot"
+          },
+          {
+            word: "seacláid",
+            hint: "chocolate"
+          },
+          {
+            word: "sceallóga",
+            hint: "chips"
           }
         ]
       }
