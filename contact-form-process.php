@@ -8,7 +8,7 @@ if (isset($_POST['email'])) {
     
     
 
-    $email_to = "emma@gamesasgaeilge.com";
+    $email_to = "emma@gamesasgaeilge.ie";
     $headers = "From: ".$email;
     $txt =  "You have a contact form submission from ".$name.".\n\n".$message;
     $email_subject = "New contact form submission";
@@ -24,7 +24,7 @@ if (isset($_POST['email'])) {
    
     
     
-    $secretKey = "6LfWEX8aAAAAAHDiz6PGKnGxBMa05NUt6pMHgIhb";
+    $secretKey = "6LeOKIoaAAAAAPp8xW5Bi_xmSCC8uVzIpkHay8JE";
         $ip = $_SERVER['REMOTE_ADDR'];
         // post request to server
         $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
