@@ -1,0 +1,58 @@
+
+%{
+    #include <string.h>
+
+    int valid_input = 1;    
+%}
+
+%%
+
+int|bool|string|void|struct    
+
+true|false { }
+
+if|then|else { }
+
+return { }
+
+printf { }
+
+for { }
+
+"+"|"-"|"*"|"/"|">"|"<"|"=="|"<="|">="|"!="|"!"|"="|"("|")"|"{"|"}"|";"|"and"|"or"|"not"|"." { }  
+
+
+\"[^"\\]*\"    /* string literals */ { }   
+
+[ \n]+ /* new line */     {  }
+
+
+
+-?[0-9]+        {
+    if (strlen(yytext) > 6 || atoi(yytext) < -32768 || atoi(yytext) > 32767) {
+        valid_input = 0;
+        return 0;
+    }
+}
+
+[_a-zA-Z][_0-9a-zA-Z]*   { }
+
+(\/\/|##).*\n         { }
+
+<<EOF>>                 {return 1;}
+
+.   {valid_input = 0; return 0;}
+
+%%
+
+#ifndef TEST 
+int main(int argc, char **argv) { 
+    yylex(); 
+    if (valid_input) {
+        fprintf(stdout, "VALID");
+    }
+    else {
+        fprintf(stdout, "ERROR");
+    }
+}
+#endif
